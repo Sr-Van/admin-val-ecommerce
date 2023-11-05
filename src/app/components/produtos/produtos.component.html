@@ -1,1 +1,53 @@
-<p>produtos works!</p>
+<div class="container">
+  <div class="header-prod">
+    <h1>Produtos no Banco de dados:</h1>
+  </div>
+
+  <div class="prod-container">
+    <h2>Bolsas</h2>
+    <ul>
+      <li *ngFor="let item of bagItems">
+        <b>
+          {{ item.product }}
+        </b>
+        <span>Preço: {{ item.price | currency: 'BRL'}}</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="prod-container">
+    <h2>Acessorios</h2>
+    <ul>
+      <li *ngFor="let item of acessoriesItems">
+        <b>
+          {{ item.product }}
+        </b>
+        <span>Preço: {{ item.price | currency: 'BRL'}}</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="prod-container">
+    <h2>Variedades</h2>
+    <ul>
+      <li *ngFor="let item of varietyItems">
+        <b>
+          {{ item.product }}
+        </b>
+        <span>Preço: {{ item.price | currency: 'BRL'}}</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="prod-container">
+    <h2>Eletronicos</h2>
+    <ul>
+      <li *ngFor="let item of eletronicItems">
+        <b>
+          {{ item.product }}
+        </b>
+        <span>Preço: {{ item.price | currency: 'BRL'}}</span>
+      </li>
+    </ul>
+  </div>
+</div>
