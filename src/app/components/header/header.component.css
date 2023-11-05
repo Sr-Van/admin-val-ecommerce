@@ -1,6 +1,9 @@
 .toolbar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+
+  position: relative;
 }
 
 .toolbar-links {
@@ -12,11 +15,16 @@
 }
 
 mat-icon {
-  font-size: 30px;
+  transform: scale(2);
 }
 
 .menu-btn {
   display: block;
+  position: absolute;
+
+  right: 10px;
+  top: 20px;
+
 }
 
 
