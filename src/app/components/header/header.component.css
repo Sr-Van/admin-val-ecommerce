@@ -1,0 +1,31 @@
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.toolbar-links {
+  width: 50%;
+  display: none;
+  justify-content: space-evenly;
+
+
+}
+
+mat-icon {
+  font-size: 30px;
+}
+
+.menu-btn {
+  display: block;
+}
+
+
+@media(min-width: 768px) {
+  .toolbar-links {
+    display: flex;
+  }
+
+  .menu-btn {
+    display: none;
+  }
+}

@@ -1,0 +1,25 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row class="toolbar">
+    <span>My App</span>
+    <span class="example-spacer"></span>
+
+    <div class="toolbar-links">
+      <button mat-button>Produtos</button>
+      <button mat-button>Pedidos</button>
+      <button mat-button>Visitas</button>
+      <button mat-raised-button color="warn">Adicionar Produto</button>
+    </div>
+
+
+    <button mat-button [matMenuTriggerFor]="menu" class="example-icon menu-btn" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </mat-toolbar-row>
+
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>Produtos</button>
+    <button mat-menu-item>Pedidos</button>
+    <button mat-menu-item>Visitas</button>
+    <button mat-menu-item>Adicionar Produto</button>
+  </mat-menu>
+</mat-toolbar>
