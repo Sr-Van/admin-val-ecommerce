@@ -4,6 +4,7 @@
   align-items: center;
 
   position: relative;
+  background-color: #06125b !important;
 }
 
 .toolbar-links {

@@ -1,13 +1,13 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row class="toolbar">
-    <span>My App</span>
+    <span (click)="goRoute('')">Val Magazine</span>
     <span class="example-spacer"></span>
 
     <div class="toolbar-links">
-      <button mat-button>Produtos</button>
-      <button mat-button>Pedidos</button>
-      <button mat-button>Visitas</button>
-      <button mat-raised-button color="warn">Adicionar Produto</button>
+      <button mat-button (click)="goRoute(produtos)" data-id="produtos" #produtos>Produtos</button>
+      <button mat-button (click)="goRoute(pedidos)" data-id="pedidos" #pedidos>Pedidos</button>
+      <button mat-button (click)="goRoute(visitas)" data-id="visitas" #visitas>Visitas</button>
+      <button mat-raised-button color="warn" (click)="goRoute(add)" data-id="add" #add>Adicionar Produto</button>
     </div>
 
 
@@ -17,9 +17,9 @@
   </mat-toolbar-row>
 
   <mat-menu #menu="matMenu">
-    <button mat-menu-item>Produtos</button>
-    <button mat-menu-item>Pedidos</button>
-    <button mat-menu-item>Visitas</button>
-    <button mat-menu-item>Adicionar Produto</button>
+    <button mat-menu-item (click)="goRoute(produtos)">Produtos</button>
+    <button mat-menu-item (click)="goRoute(pedidos)">Pedidos</button>
+    <button mat-menu-item (click)="goRoute(visitas)">Visitas</button>
+    <button mat-menu-item (click)="goRoute(add)">Adicionar Produto</button>
   </mat-menu>
 </mat-toolbar>
