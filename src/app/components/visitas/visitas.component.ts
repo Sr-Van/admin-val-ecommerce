@@ -11,13 +11,15 @@ import { Subscription } from 'rxjs';
 export class VisitasComponent {
 
   subscribe: Subscription
-
+  isLoad: boolean = false
   visitas: any[] = []
 
 
   constructor(private apiService: ApiServiceService) {
     this.subscribe = this.apiService.getArr('visits')?.subscribe(data => {
       this.visitas = data
+
+      this.isLoad = true
     })
   }
 

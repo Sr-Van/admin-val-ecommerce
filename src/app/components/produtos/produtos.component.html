@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="isLoad">
   <div class="header-prod">
     <h1>Produtos no Banco de dados:</h1>
   </div>
@@ -46,9 +46,12 @@
       <mat-list-item role="listitem" *ngFor="let item of eletronicItems" style="height: 120px; width: 200px;">
         <div class="card-prod">
           <span matListItemLine >{{ item.product }}</span>
-          <span matListItemLine >Preço: {{ item.price | currency: 'BRL'}}</span>
+        <span matListItemLine >Preço: {{ item.price | currency: 'BRL'}}</span>
         </div>
       </mat-list-item>
     </mat-list>
   </div>
 </div>
+
+
+<mat-spinner *ngIf="!isLoad"></mat-spinner>

@@ -7,6 +7,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatListModule} from '@angular/material/list';
 import {MatTableModule} from '@angular/material/table';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 
@@ -17,13 +18,13 @@ import {MatTableModule} from '@angular/material/table';
     CommonModule, MatToolbarModule,
     MatIconModule, MatButtonModule,
     MatMenuModule, MatListModule,
-    MatTableModule
+    MatTableModule, MatProgressSpinnerModule
   ],
   exports: [
     CommonModule, MatToolbarModule,
     MatIconModule, MatButtonModule,
     MatMenuModule, MatListModule,
-    MatTableModule
+    MatTableModule, MatProgressSpinnerModule
   ]
 })
 export class MaterialModuleModule { }

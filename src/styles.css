@@ -22,3 +22,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-
 .card-prod:hover {
   box-shadow: 0 3px 5px 0 rgba(0,0,0,.12);
 }
+
+.mat-mdc-progress-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: scale(0.7);
+
+  transform: translate(-50%, -50%);
+}
+

@@ -18,6 +18,7 @@ export class ProdutosComponent {
   bagItems: Products[] = [];
 
   subscribe: Subscription
+  isLoad: boolean = false
 
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
 
@@ -29,6 +30,8 @@ export class ProdutosComponent {
       this.acessoriesItems = data?.filter(prod => prod.type === 'acessories')
       this.varietyItems = data?.filter(prod => prod.type === 'variety')
       this.bagItems = data?.filter(prod => prod.type === 'bags')
+
+      this.isLoad = true
     })
 
   }

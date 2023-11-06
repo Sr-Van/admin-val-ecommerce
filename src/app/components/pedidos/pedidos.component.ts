@@ -13,11 +13,13 @@ export class PedidosComponent {
 
   pedidos: any[] = []
 
+  isLoad: boolean = false
+
 
   constructor(private apiService: ApiServiceService) {
     this.subscribe = this.apiService.getArr('registers')?.subscribe(data => {
       this.pedidos = data
-      console.log(data);
+      this.isLoad = true
 
     })
   }
