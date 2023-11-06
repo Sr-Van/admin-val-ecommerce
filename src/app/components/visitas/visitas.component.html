@@ -1,1 +1,17 @@
-<p>visitas works!</p>
+<div class="container">
+  <div class="header-visits">
+    <h1>Visitas registradas:</h1>
+  </div>
+
+  <div>
+
+    <mat-list role="list" style="display: flex; flex-wrap: wrap; width: 100%;">
+      <mat-list-item role="listitem" *ngFor="let item of visitas" style="height: 120px; width: 200px;">
+        <div class="card-prod">
+          <span matListItemLine>visitado: {{ item.visit }}</span>
+          <span matListItemLine>{{ item.title }}</span>
+        </div>
+      </mat-list-item>
+    </mat-list>
+  </div>
+</div>

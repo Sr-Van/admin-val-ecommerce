@@ -5,49 +5,50 @@
 
   <div class="prod-container">
     <h2>Bolsas</h2>
-    <ul>
-      <li *ngFor="let item of bagItems">
-        <b>
-          {{ item.product }}
-        </b>
-        <span>Preço: {{ item.price | currency: 'BRL'}}</span>
-      </li>
-    </ul>
+    <mat-list role="list" style="display: flex; flex-wrap: wrap; width: 100%;">
+      <mat-list-item role="listitem" *ngFor="let item of bagItems" style="height: 120px; width: 200px;">
+        <div class="card-prod">
+          <span matListItemLine >{{ item.product }}</span>
+          <span matListItemLine >Preço: {{ item.price | currency: 'BRL'}}</span>
+        </div>
+      </mat-list-item>
+    </mat-list>
   </div>
 
   <div class="prod-container">
     <h2>Acessorios</h2>
-    <ul>
-      <li *ngFor="let item of acessoriesItems">
-        <b>
-          {{ item.product }}
-        </b>
-        <span>Preço: {{ item.price | currency: 'BRL'}}</span>
-      </li>
-    </ul>
+    <mat-list role="list" style="display: flex; flex-wrap: wrap; width: 100%;">
+      <mat-list-item role="listitem" *ngFor="let item of acessoriesItems" style="height: 120px; width: 200px;">
+        <div class="card-prod">
+          <span matListItemLine >{{ item.product }}</span>
+          <span matListItemLine >Preço: {{ item.price | currency: 'BRL'}}</span>
+        </div>
+      </mat-list-item>
+    </mat-list>
   </div>
 
   <div class="prod-container">
     <h2>Variedades</h2>
-    <ul>
-      <li *ngFor="let item of varietyItems">
-        <b>
-          {{ item.product }}
-        </b>
-        <span>Preço: {{ item.price | currency: 'BRL'}}</span>
-      </li>
-    </ul>
+    <mat-list role="list" style="display: flex; flex-wrap: wrap; width: 100%;">
+      <mat-list-item role="listitem" *ngFor="let item of varietyItems" style="height: 120px; width: 200px;">
+        <div class="card-prod">
+          <span matListItemLine >{{ item.product }}</span>
+          <span matListItemLine >Preço: {{ item.price | currency: 'BRL'}}</span>
+        </div>
+      </mat-list-item>
+    </mat-list>
+
   </div>
 
   <div class="prod-container">
     <h2>Eletronicos</h2>
-    <ul>
-      <li *ngFor="let item of eletronicItems">
-        <b>
-          {{ item.product }}
-        </b>
-        <span>Preço: {{ item.price | currency: 'BRL'}}</span>
-      </li>
-    </ul>
+    <mat-list role="list" style="display: flex; flex-wrap: wrap; width: 100%;">
+      <mat-list-item role="listitem" *ngFor="let item of eletronicItems" style="height: 120px; width: 200px;">
+        <div class="card-prod">
+          <span matListItemLine >{{ item.product }}</span>
+          <span matListItemLine >Preço: {{ item.price | currency: 'BRL'}}</span>
+        </div>
+      </mat-list-item>
+    </mat-list>
   </div>
 </div>

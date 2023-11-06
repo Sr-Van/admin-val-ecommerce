@@ -1,1 +1,18 @@
-<p>pedidos works!</p>
+<div class="container">
+  <div class="header-pedidos">
+    <h1>Pedidos Recebidos:
+    </h1>
+
+    <div>
+      <mat-list role="list" style="display: flex; flex-wrap: wrap; width: 100%;">
+        <mat-list-item role="listitem" *ngFor="let item of pedidos" style="height: 200px; width: 320px;">
+          <div class="card-prod">
+            <span matListItemLine>pedido: {{ item.pedido }}</span>
+            <span matListItemLine>pedido por: {{ item.title }}</span>
+            <span matListItemLine>id: {{ item._id }}</span>
+          </div>
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </div>
+</div>

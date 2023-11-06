@@ -19,6 +19,8 @@ export class ProdutosComponent {
 
   subscribe: Subscription
 
+  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+
   constructor(private apiService: ApiServiceService){
     this.subscribe = this.apiService.getArr('Products')?.subscribe(data => {
       this.itemLists = data
