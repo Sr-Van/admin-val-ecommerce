@@ -12,7 +12,6 @@
   display: none;
   justify-content: space-evenly;
 
-
 }
 
 mat-icon {
@@ -36,5 +35,11 @@ mat-icon {
 
   .menu-btn {
     display: none;
+  }
+}
+
+@media(min-width: 1360px) {
+  .toolbar-links {
+    width: 30%;
   }
 }

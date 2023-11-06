@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+  isLoad: boolean = false
+
+  ngOnInit() {
+    setTimeout(() => {
+      this.isLoad = true
+    }, 1000);
+  }
+
 }

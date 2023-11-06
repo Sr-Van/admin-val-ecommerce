@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MaterialModuleModule } from '../material-module/material-module.module';
+import { FormsModule } from '@angular/forms';
 
 import { HeaderComponent } from '../header/header.component';
 import { HomeComponent } from '../home/home.component';
@@ -23,7 +24,8 @@ import { ProdutosComponent } from '../produtos/produtos.component';
   ],
   imports: [
     CommonModule,
-    MaterialModuleModule
+    MaterialModuleModule,
+    FormsModule
   ],
   exports: [
     HeaderComponent,

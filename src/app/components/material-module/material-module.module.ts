@@ -8,6 +8,9 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatListModule} from '@angular/material/list';
 import {MatTableModule} from '@angular/material/table';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatSelectModule} from '@angular/material/select';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 
 
@@ -18,13 +21,17 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     CommonModule, MatToolbarModule,
     MatIconModule, MatButtonModule,
     MatMenuModule, MatListModule,
-    MatTableModule, MatProgressSpinnerModule
+    MatTableModule, MatProgressSpinnerModule,
+    MatSelectModule, MatInputModule,
+    MatFormFieldModule
   ],
   exports: [
     CommonModule, MatToolbarModule,
     MatIconModule, MatButtonModule,
     MatMenuModule, MatListModule,
-    MatTableModule, MatProgressSpinnerModule
+    MatTableModule, MatProgressSpinnerModule,
+    MatSelectModule, MatInputModule,
+    MatFormFieldModule
   ]
 })
 export class MaterialModuleModule { }

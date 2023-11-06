@@ -5,6 +5,8 @@ import { Observable } from 'rxjs';
 
 import { Products } from '../types/products.interface';
 
+import {MatSnackBar} from '@angular/material/snack-bar';
+
 
 
 @Injectable({
@@ -17,10 +19,28 @@ export class ApiServiceService {
   prodArr: Products[] = []
 
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient,
+              private snack: MatSnackBar) {}
 
   getArr(endPoint: string): Observable<Products[]> {
     return this.http.get<Products[]>(this.url + endPoint)
+  }
+
+  postItem(endPoint: string, data: any) {
+    console.log(data);
+    console.log(endPoint);
+
+    this.http.post(`${this.url}${endPoint}`, data).subscribe(
+      (response) => {
+        console.log('Ordem enviada com sucesso.', response);
+        this.snack.open('Produto adicionado', 'Fechar')
+      },
+      (error) => {
+        console.error('Erro ao enviar a ordem.', error);
+        this.snack.open('Produto não adicionado', 'Fechar')
+      }
+    )
+
   }
 
 

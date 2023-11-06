@@ -1,1 +1,32 @@
-<p>add-produto works!</p>
+<div class="container">
+  <div>
+    <h1 style="padding: 2rem 0;">Adicione um Novo Produto:</h1>
+  </div>
+  <h2>Preencha todos os campos.</h2>
+  <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <mat-form-field>
+      <mat-label>Produto</mat-label>
+      <input required matInput name="product" [(ngModel)]="myForm.produto" placeholder="produto_exemplo">
+    </mat-form-field>
+    <small>use _ no lugar de espaço</small>
+    <mat-form-field>
+      <mat-label>Preco</mat-label>
+      <input required type="number" matInput name="price" [(ngModel)]="myForm.price">
+    </mat-form-field>
+    <small>apenas o valor EX: 20</small>
+    <mat-form-field>
+      <mat-label>Categoria</mat-label>
+      <mat-select required name="type" [(ngModel)]="myForm.type">
+        <mat-option value="eletronics">Eletronicos</mat-option>
+        <mat-option value="acessories">Acessorios</mat-option>
+        <mat-option value="bags">Bolsas</mat-option>
+        <mat-option value="variety">Variedades</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Descrição</mat-label>
+      <textarea required matInput name="description" [(ngModel)]="myForm.description"></textarea>
+    </mat-form-field>
+    <button type="submit" mat-raised-button color="primary">Salvar</button>
+  </form>
+</div>
