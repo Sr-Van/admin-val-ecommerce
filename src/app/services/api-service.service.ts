@@ -27,8 +27,6 @@ export class ApiServiceService {
   }
 
   postItem(endPoint: string, data: any) {
-    console.log(data);
-    console.log(endPoint);
 
     this.http.post(`${this.url}${endPoint}`, data).subscribe(
       (response) => {
