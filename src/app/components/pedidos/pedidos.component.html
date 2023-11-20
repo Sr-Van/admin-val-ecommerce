@@ -1,20 +1,29 @@
-<div class="container" *ngIf="isLoad">
-  <div class="header-pedidos">
-    <h1>Pedidos Recebidos:
-    </h1>
+@if(isLoad) {
+  <div class="container">
+    <div class="header-pedidos">
+      <h1>Pedidos Recebidos:
+      </h1>
 
-    <div>
-      <mat-list role="list" style="display: flex; flex-wrap: wrap; width: 100%;">
-        <mat-list-item role="listitem" *ngFor="let item of pedidos" style="height: 200px; width: fit-content;">
-          <div class="card-prod">
-            <span matListItemLine>pedido: {{ item.pedido }}</span>
-            <span matListItemLine>pedido por: {{ item.title }}</span>
-            <span matListItemLine>id: {{ item.data }}</span>
-          </div>
-        </mat-list-item>
-      </mat-list>
+      <div>
+        <mat-list role="list" style="display: flex; flex-wrap: wrap; width: 100%;">
+
+          @for(item of pedidos; track item) {
+            <mat-list-item role="listitem" style="height: 200px; width: fit-content;">
+              <div class="card-prod">
+                <span matListItemLine>pedido: {{ item.pedido }}</span>
+                <span matListItemLine>pedido por: {{ item.title }}</span>
+                <span matListItemLine>id: {{ item.data | date }}</span>
+              </div>
+            </mat-list-item>
+          } @empty {
+            <span>Não existem pedidos!</span>
+          }
+
+        </mat-list>
+      </div>
     </div>
   </div>
-</div>
-
-<mat-spinner *ngIf="!isLoad" class="loading"></mat-spinner>
+}
+@else {
+  <mat-spinner class="loading"></mat-spinner>
+}

@@ -1,21 +1,30 @@
-<div class="container" *ngIf="isLoad">
-  <div class="header-visits">
-    <h1>Visitas registradas:</h1>
+@if(isLoad) {
+  <div class="container">
+    <div class="header-visits">
+      <h1>Visitas registradas:</h1>
+    </div>
+
+    <div>
+
+      <mat-list role="list" style="display: flex; flex-wrap: wrap; width: 100%;">
+
+        @for(item of visitas; track item) {
+          <mat-list-item role="listitem" style="height: 140px; width: 200px;">
+            <div class="card-prod">
+              <span matListItemLine>visitado: {{ item.visit }}</span>
+              <span matListItemLine>{{ item.title }}</span>
+              <span matListItemLine>{{ item.date | date:'short':'GMT' }}</span>
+            </div>
+          </mat-list-item>
+        }
+
+      </mat-list>
+    </div>
   </div>
 
-  <div>
-
-    <mat-list role="list" style="display: flex; flex-wrap: wrap; width: 100%;">
-      <mat-list-item role="listitem" *ngFor="let item of visitas" style="height: 120px; width: 200px;">
-        <div class="card-prod">
-          <span matListItemLine>visitado: {{ item.visit }}</span>
-          <span matListItemLine>{{ item.title }}</span>
-          <span matListItemLine>{{ item.date }}</span>
-        </div>
-      </mat-list-item>
-    </mat-list>
-  </div>
-</div>
+} @else {
+  <mat-spinner></mat-spinner>
+}
 
 
-<mat-spinner *ngIf="!isLoad"></mat-spinner>
+

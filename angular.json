@@ -61,10 +61,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "admin-val:build:production"
+              "buildTarget": "admin-val:build:production"
             },
             "development": {
-              "browserTarget": "admin-val:build:development"
+              "buildTarget": "admin-val:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -72,7 +72,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "admin-val:build"
+            "buildTarget": "admin-val:build"
           }
         },
         "test": {

@@ -1,57 +1,82 @@
-<div class="container" *ngIf="isLoad">
-  <div class="header-prod">
-    <h1>Produtos no Banco de dados:</h1>
+@if(isLoad) {
+  <div class="container" >
+    <div class="header-prod">
+      <h1>Produtos no Banco de dados:</h1>
+    </div>
+
+    <div class="prod-container">
+      <h2>Bolsas</h2>
+      <mat-list role="list" style="display: flex; flex-wrap: wrap; width: 100%;">
+
+        @for(item of bagItems; track item) {
+
+          <mat-list-item role="listitem" style="height: 120px; width: 300px;">
+            <div class="card-prod">
+              <span matListItemLine >{{ item.product }}</span>
+              <span matListItemLine >Preço: {{ item.price | currency: 'BRL'}}</span>
+            </div>
+          </mat-list-item>
+
+        }
+      </mat-list>
+    </div>
+
+    <div class="prod-container" #acessories>
+      <h2>Acessorios</h2>
+      <mat-list role="list" style="display: flex; flex-wrap: wrap; width: 100%;">
+
+        @for(item of acessoriesItems; track item) {
+
+          <mat-list-item role="listitem" style="height: 120px; width: 300px;">
+            <div class="card-prod">
+              <span matListItemLine >{{ item.product }}</span>
+              <span matListItemLine >Preço: {{ item.price | currency: 'BRL'}}</span>
+            </div>
+          </mat-list-item>
+        }
+      </mat-list>
+    </div>
+
+    <div class="prod-container" #eletronics>
+      <h2>Eletronicos</h2>
+      <mat-list role="list" style="display: flex; flex-wrap: wrap; width: 100%;">
+
+        @for(item of eletronicItems; track item) {
+
+          <mat-list-item role="listitem" style="height: 120px; width: 300px;">
+            <div class="card-prod">
+              <span matListItemLine >{{ item.product }}</span>
+              <span matListItemLine >Preço: {{ item.price | currency: 'BRL'}}</span>
+            </div>
+          </mat-list-item>
+        }
+      </mat-list>
+    </div>
+
+
+    <div class="prod-container">
+    <h2 #variety>Variedades</h2>
+      @defer(on viewport(variety)){
+        <mat-list role="list" style="display: flex; flex-wrap: wrap; width: 100%;">
+
+          @for(item of varietyItems; track item) {
+
+            <mat-list-item role="listitem" style="height: 120px; width: 300px;">
+              <div class="card-prod">
+                <span matListItemLine >{{ item.product }}</span>
+                <span matListItemLine >Preço: {{ item.price | currency: 'BRL'}}</span>
+              </div>
+            </mat-list-item>
+          }
+        </mat-list>
+
+      } @placeholder (minimum 2000ms){
+        <mat-spinner></mat-spinner>
+      }
+    </div>
   </div>
-
-  <div class="prod-container">
-    <h2>Bolsas</h2>
-    <mat-list role="list" style="display: flex; flex-wrap: wrap; width: 100%;">
-      <mat-list-item role="listitem" *ngFor="let item of bagItems" style="height: 120px; width: 200px;">
-        <div class="card-prod">
-          <span matListItemLine >{{ item.product }}</span>
-          <span matListItemLine >Preço: {{ item.price | currency: 'BRL'}}</span>
-        </div>
-      </mat-list-item>
-    </mat-list>
-  </div>
-
-  <div class="prod-container">
-    <h2>Acessorios</h2>
-    <mat-list role="list" style="display: flex; flex-wrap: wrap; width: 100%;">
-      <mat-list-item role="listitem" *ngFor="let item of acessoriesItems" style="height: 120px; width: 200px;">
-        <div class="card-prod">
-          <span matListItemLine >{{ item.product }}</span>
-          <span matListItemLine >Preço: {{ item.price | currency: 'BRL'}}</span>
-        </div>
-      </mat-list-item>
-    </mat-list>
-  </div>
-
-  <div class="prod-container">
-    <h2>Variedades</h2>
-    <mat-list role="list" style="display: flex; flex-wrap: wrap; width: 100%;">
-      <mat-list-item role="listitem" *ngFor="let item of varietyItems" style="height: 120px; width: 200px;">
-        <div class="card-prod">
-          <span matListItemLine >{{ item.product }}</span>
-          <span matListItemLine >Preço: {{ item.price | currency: 'BRL'}}</span>
-        </div>
-      </mat-list-item>
-    </mat-list>
-
-  </div>
-
-  <div class="prod-container">
-    <h2>Eletronicos</h2>
-    <mat-list role="list" style="display: flex; flex-wrap: wrap; width: 100%;">
-      <mat-list-item role="listitem" *ngFor="let item of eletronicItems" style="height: 120px; width: 200px;">
-        <div class="card-prod">
-          <span matListItemLine >{{ item.product }}</span>
-        <span matListItemLine >Preço: {{ item.price | currency: 'BRL'}}</span>
-        </div>
-      </mat-list-item>
-    </mat-list>
-  </div>
-</div>
+} @else {
+  <mat-spinner></mat-spinner>
+}
 
 
-<mat-spinner *ngIf="!isLoad"></mat-spinner>
