@@ -12,7 +12,7 @@
               <div class="card-prod">
                 <span matListItemLine>pedido: {{ item.pedido }}</span>
                 <span matListItemLine>pedido por: {{ item.title }}</span>
-                <span matListItemLine>id: {{ item.data | date }}</span>
+                <span matListItemLine>id: {{ item.data | date:'short':'GMT' }}</span>
               </div>
             </mat-list-item>
           } @empty {
