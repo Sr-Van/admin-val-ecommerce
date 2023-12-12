@@ -11,6 +11,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {CdkAccordionModule} from '@angular/cdk/accordion';
 
 
 
@@ -23,7 +24,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatMenuModule, MatListModule,
     MatTableModule, MatProgressSpinnerModule,
     MatSelectModule, MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule, CdkAccordionModule
   ],
   exports: [
     CommonModule, MatToolbarModule,
@@ -31,7 +32,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatMenuModule, MatListModule,
     MatTableModule, MatProgressSpinnerModule,
     MatSelectModule, MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule, CdkAccordionModule
   ]
 })
 export class MaterialModuleModule { }

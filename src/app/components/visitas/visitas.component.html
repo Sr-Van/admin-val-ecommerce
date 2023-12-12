@@ -6,19 +6,38 @@
 
     <div>
 
-      <mat-list role="list" style="display: flex; flex-wrap: wrap; width: 100%;">
-
-        @for(item of visitas; track item) {
-          <mat-list-item role="listitem" style="height: 140px; width: 200px;">
-            <div class="card-prod">
-              <span matListItemLine>visitado: {{ item.visit }}</span>
-              <span matListItemLine>{{ item.title }}</span>
-              <span matListItemLine>{{ item.date | date:'short':'GMT' }}</span>
+      <cdk-accordion class="accordion">
+        @for (item of visitas; track item; let index = $index) {
+          <cdk-accordion-item
+      
+            #accordionItem="cdkAccordionItem"
+            class="accordion-item"
+            role="button"
+            tabindex="0"
+            [attr.id]="'accordion-header-' + index"
+            [attr.aria-expanded]="accordionItem.expanded"
+            [attr.aria-controls]="'accordion-body-' + index">
+            <div class="accordion-item-header" (click)="accordionItem.toggle()">
+              Visita {{ index + 1 }}
+              <span class="accordion-item-description">
+                Click para {{ accordionItem.expanded ? 'fechar' : 'abrir' }}
+              </span>
             </div>
-          </mat-list-item>
+            <div
+              class="accordion-item-body"
+              role="region"
+              [style.display]="accordionItem.expanded ? '' : 'none'"
+              [attr.id]="'accordion-body-' + index"
+              [attr.aria-labelledby]="'accordion-header-' + index">
+              <span >visitado: {{ item.visit }}</span>
+              <span >{{ item.title }}</span>
+              <span >data: {{ item.date | date:'short':'GMT' }}</span>
+            </div>
+          </cdk-accordion-item>
+        }  @empty {
+          <span>Não existem visitas!</span>
         }
-
-      </mat-list>
+      </cdk-accordion>
     </div>
   </div>
 

@@ -5,21 +5,42 @@
       </h1>
 
       <div>
-        <mat-list role="list" style="display: flex; flex-wrap: wrap; width: 100%;">
 
-          @for(item of pedidos; track item) {
-            <mat-list-item role="listitem" style="height: 200px; width: fit-content;">
-              <div class="card-prod">
-                <span matListItemLine>pedido: {{ item.pedido }}</span>
-                <span matListItemLine>pedido por: {{ item.title }}</span>
-                <span matListItemLine>id: {{ item.data | date:'short':'GMT' }}</span>
+
+        <cdk-accordion class="accordion">
+          @for (item of pedidos; track item; let index = $index) {
+            <cdk-accordion-item
+        
+              #accordionItem="cdkAccordionItem"
+              class="accordion-item"
+              role="button"
+              tabindex="0"
+              [attr.id]="'accordion-header-' + index"
+              [attr.aria-expanded]="accordionItem.expanded"
+              [attr.aria-controls]="'accordion-body-' + index">
+              <div class="accordion-item-header" (click)="accordionItem.toggle()">
+                Pedido {{ index + 1 }}
+                <span class="accordion-item-description">
+                  Click para {{ accordionItem.expanded ? 'fechar' : 'abrir' }}
+                </span>
               </div>
-            </mat-list-item>
-          } @empty {
+              <div
+                class="accordion-item-body"
+                role="region"
+                [style.display]="accordionItem.expanded ? '' : 'none'"
+                [attr.id]="'accordion-body-' + index"
+                [attr.aria-labelledby]="'accordion-header-' + index">
+                <span >pedido: {{ item.pedido }}</span>
+                <span >pedido por: {{ item.title }}</span>
+                <span >id: {{ item.data | date:'short':'GMT' }}</span>
+              </div>
+            </cdk-accordion-item>
+          }  @empty {
             <span>Não existem pedidos!</span>
           }
-
-        </mat-list>
+        </cdk-accordion>
+        
+        
       </div>
     </div>
   </div>
